@@ -1,26 +1,18 @@
 export default {
-		dt:1,
-		L:100,
-		agentsize: 1.0,
-	
-		speed: {
-			range:[0,1],
-			default:0.2
+		N:500,
+		coupling_strength: {
+			range:[0,2],
+		default:0.9
 		},
-		wiggle: {
-			range:[0,180],
-			default:50
+		dark_mode: {
+		default: false
 		},
-		interaction_radius:{
-			range : [0,5],
-			default : 3
+		highlight_last: {
+		default: true
 		},
-		number_of_particles : {
-			choices:[50,100,200,400],
-		default:2
-		},
-		color_by_heading: {
-			default: true
+		color_orbits: {
+		default: false
 		}
+		
 }
 

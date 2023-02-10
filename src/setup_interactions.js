@@ -6,19 +6,13 @@ import resetparameters from "./reset_parameters.js"
 import {iterate,initialize,update} from "./simulation.js"
 
 
-var timer = {}
-
-const startstop = (display) => {
-	ct.go.value() == 1 ? timer = interval(()=>iterate(display),cfg.simulation.delay) : timer.stop()
-
-}
-
 export default (display,controls,config) => {
 	
-	ct.reset.update(()=>resetparameters(controls))	
-	ct.go.update(()=>startstop(display))
-	ct.setup.update(()=>initialize(display,config))
-	param.number_of_particles.widget.update(()=>initialize(display,config))
-	
+	display.on("click",function(){iterate(display,config)})
+	ct.reset.update(()=>initialize(display,config))
+	param.coupling_strength.widget.update(()=>{update(display)})
+	param.highlight_last.widget.update(()=>{update(display)})
+	param.color_orbits.widget.update(()=>{update(display)})
+	param.dark_mode.widget.update(()=>{update(display)})
 }
 

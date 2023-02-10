@@ -1,69 +1,49 @@
-
+import * as d3 from "d3"
 import param from "./parameters.js"
 import {each,range,map,mean} from "lodash-es"
 import {rad2deg,deg2rad} from "./utils"
+import {Xback,Yback} from "./viz.js"
 
-const L = param.L;
-const dt = param.dt;
+const N = param.N;
 
-var agents = [];
+var orbits = [];
+var No = 0;
 
-const initialize = () => {
+const stdmap = (p) => { 
+	const f = param.coupling_strength.widget.value() * Math.sin(p[0]); 
+	return [ ( p[0] + p[1] + f + 2 * Math.PI ) % (2 * Math.PI) , ( p[1] + f + 2 * Math.PI) % (2 * Math.PI) ];	
+}
 
-	// set/reset timer
-	param.timer={}; param.tick=0;
+function make_orbit(p){
+	var points = [], i = 0;
+	points.push(p);
+	while(++i<N){ p=stdmap(p); points.push(p);}
+	return points;
+}
 
-	// make agents
 
-	const N = param.number_of_particles.choices[param.number_of_particles.widget.value()];
-	
-	agents = map(range(N), i => { return {
-				index:i, 
-				x:L*Math.random(), 
-				y:L*Math.random(),
-				theta: 2*Math.PI*Math.random(),
-			} 
-	});
-	
+const initialize = (display) => {
+	orbits = [];
+	No = 0;
 };
 
-const go  = () => {
+
+const go  = (display) => {
 	
-	param.tick++;
-	
-	each(agents,a=>{
-		
-		var dx = dt*param.speed.widget.value()*Math.cos(a.theta);
-		var dy = dt*param.speed.widget.value()*Math.sin(a.theta);
-		
-		const x_new = a.x + dx;
-		const y_new = a.y + dy;
-		
-		if (x_new < 0) {dx+=L};
-		if (y_new < 0) {dy+=L};
-		if (x_new > L) {dx-=L};
-		if (y_new > L) {dy-=L};  
-		
-		a.x += dx;
-		a.y += dy;
-		
-		var neighbors = agents.filter(d =>  (d.x-a.x)**2 + (d.y-a.y)**2 <= param.interaction_radius.widget.value()**2 )
-		
-		var mx = mean(map(neighbors,x=> Math.cos(deg2rad(x.theta))));
-		var my = mean(map(neighbors,x=> Math.sin(deg2rad(x.theta))));	
-		
-		a.theta = rad2deg(Math.atan2(my,mx))
-		
-		a.theta += deg2rad(param.wiggle.widget.value())*(Math.random()-0.5)
-		
-	})
-	
+	const pon = d3.pointer(event)
+	var p = [Xback(pon[0]),Yback(pon[1])];
+	var orbit = make_orbit(p);
+	No++;
+	orbits.push({index:No,orbit:orbit,color:Math.random()})	
 }
 
 const update = () => {
-	
-	each(agents,x => {x.active = x.index < param.number_of_particles.widget.value() ? true : false})
-
+	orbits.forEach(function(d){
+		var p = [];
+		p[0] = d.orbit[0][0] ; p[1] = d.orbit[0][1];		
+		var points = make_orbit(p);
+		d.orbit = points;
+	})	
 }
 
-export {agents,initialize,go,update}
+export {orbits,initialize,go,update}

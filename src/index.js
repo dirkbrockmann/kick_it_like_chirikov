@@ -24,6 +24,7 @@ const load = function (container_id,config=cfg) {
 	
 	setup_simulation(display,config)
 	
+	
 }
 
 export {load,cfg as config};
