@@ -54,6 +54,8 @@ Go to the directory, install, build and show using `npm`:
 
 --- 
 
+## License
+
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
 
