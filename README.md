@@ -1,8 +1,4 @@
-Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
-
-This work is licensed under a
-[Creative Commons Attribution 4.0 International License][cc-by].
-
+[![CC BY 4.0][cc-by-shield]][cc-by]
 [![CC BY 4.0][cc-by-image]][cc-by]
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
@@ -10,6 +6,8 @@ This work is licensed under a
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 # Kick it like Chirikov
+
+[![CC BY 4.0][cc-by-shield]][cc-by]
 
 This explorable illustrates the dynamics of the [**Standard Map**](https://en.wikipedia.org/wiki/Standard_map). In non-linear dynamics this is one of the most famous discrete time, two-dimensional maps. It's also known as the **kicked-rotator** or **Chirikov map**.
 
@@ -54,5 +52,8 @@ Go to the directory, install, build and show using `npm`:
 3. `npm run build`
 4. `npm run show`
 
+--- 
 
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
 
