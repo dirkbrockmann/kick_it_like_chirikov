@@ -80,6 +80,11 @@ const initialize = (display,config) => {
 		ctx.strokeRect(0, 0, W, H);		
 	}
 	
+	ctx.font = "60px Avenir";
+	ctx.fillStyle = "gray";
+	ctx.textAlign = "center";
+	ctx.fillText("Click Here", W/2, H/2);
+	
 };
 
 const go = (display) => {
