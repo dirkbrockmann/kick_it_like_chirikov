@@ -37,8 +37,8 @@ const update = (display) => {
 		ctx.fillStyle = "black";
 		ctx.fillRect(0, 0, W, H);				
 	} else {
-		ctx.strokeStyle = "black";
-		ctx.strokeRect(0, 0, W, H);		
+		// ctx.strokeStyle = "black";
+// 		ctx.strokeRect(0, 0, W, H);
 	}
 	
 	orbits.forEach(function(d){
@@ -50,8 +50,8 @@ const update = (display) => {
 		draw_orbit(orbits[orbits.length-1].orbit,cfg.simulation.highlight_size,cfg.simulation.highlight_color)
 	}
 		
-	ctx.strokeStyle = "black";
-	ctx.strokeRect(0, 0, W, H);	
+	// ctx.strokeStyle = "black";
+	// ctx.strokeRect(0, 0, W, H);
 }
 
 const initialize = (display,config) => {
@@ -76,8 +76,8 @@ const initialize = (display,config) => {
 		ctx.fillStyle = "black";
 		ctx.fillRect(0, 0, W, H);				
 	} else {
-		ctx.strokeStyle = "black";
-		ctx.strokeRect(0, 0, W, H);		
+		// ctx.strokeStyle = "black";
+// 		ctx.strokeRect(0, 0, W, H);	
 	}
 	
 	ctx.font = "60px Avenir";

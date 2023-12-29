@@ -21,7 +21,10 @@ const sliders = map(va,
 					.knob(cfg.widgets.slider_knob)
 					.size(cfg.widgets.slider_size)
 					.fontsize(cfg.widgets.fontsize)
+					.labelposition(cfg.widgets.slider_labelposition)
 		);
+		
+console.log(sliders)
 
 const toggles = map(bo, 
 		v => widgets.toggle()

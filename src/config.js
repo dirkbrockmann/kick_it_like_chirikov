@@ -1,10 +1,11 @@
 export default { 
 	widgets:{
-		fontsize:24,
+		fontsize:20,
 		slider_size: 400,
 		slider_show: true,
 		slider_girth:18,
 		slider_knob:20,
+		slider_labelposition:"center",
 		slider_anchor: {x:1,y:6},
 		toggle_anchor: {x:4,y:8},
 		toggle_gap: 1.5,
