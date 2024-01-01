@@ -1,5 +1,4 @@
 import 'tachyons/css/tachyons.min.css'
-
 import cfg from "./container_config.js"
 import setup_container from "./setup_container.js"
 import setup_interactions from "./setup_interactions.js"
@@ -9,7 +8,6 @@ import meta from "./meta.js"
 
 const load = function (container_id,config=cfg) {
 	
-// setting up the container
 	
 	const container = setup_container(container_id,config);
 
@@ -17,16 +15,9 @@ const load = function (container_id,config=cfg) {
 	const controls = container.controls;
 	const grid = container.grid;
 		
-// setting up the controls and actions
-	
 	setup_controls(controls,grid);
 	setup_interactions(display,controls,config);
-
-// initializing the system
-	
 	setup_simulation(display,config)
-	
-	
 }
 
 const halt  = function(){

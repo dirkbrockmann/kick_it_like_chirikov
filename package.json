@@ -2,7 +2,7 @@
   "name": "@explorables/kick_it_like_chirikov",
   "title": "Kick it like Chirikov",
   "subtitle":"The kicked rotator (standard map)",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "CC-BY-4.0",
   "description": "This explorable illustrates the chaotic sea of the famous two-dimensional map known as the kicked rotator or standard map. It's a very important system in nonlinear dynamics.",
   "repository": {
@@ -16,7 +16,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production ",
     "dev": "webpack serve --static dist/ --mode development",
-    "show": "http-server dist -o"
+    "show": "http-server dist -o",
+  "pap": "git add . ; git commit -m \"$npm_package_version\"; git push; npm version patch; npm publish "
   },
   "keywords": [
     "complexity",

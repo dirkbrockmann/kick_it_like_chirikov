@@ -7,7 +7,7 @@ import {iterate,initialize,update} from "./simulation.js"
 
 
 export default (display,controls,config) => {
-	
+	console.log(display)
 	display.on("click",function(){iterate(display,config)})
 	ct.reset.update(()=>initialize(display,config))
 	param.coupling_strength.widget.update(()=>{update(display)})

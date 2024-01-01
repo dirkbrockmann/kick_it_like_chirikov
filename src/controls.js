@@ -24,7 +24,6 @@ const sliders = map(va,
 					.labelposition(cfg.widgets.slider_labelposition)
 		);
 		
-console.log(sliders)
 
 const toggles = map(bo, 
 		v => widgets.toggle()
@@ -56,9 +55,9 @@ export default (controls,grid)=>{
 	sliders[0].position(sl_pos)
 	buttons[0].position(bu_pos).size(cfg.widgets.button_size)
 
-	controls.selectAll(".slider").data(sliders).enter().append(widgets.widget);
-	controls.selectAll(".toggle").data(toggles).enter().append(widgets.widget);
-	controls.selectAll(".button").data(buttons).enter().append(widgets.widget);
+	controls.selectAll(null).data(sliders).enter().append(widgets.widget);
+	controls.selectAll(null).data(toggles).enter().append(widgets.widget);
+	controls.selectAll(null).data(buttons).enter().append(widgets.widget);
 
 }
 

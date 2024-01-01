@@ -32,14 +32,10 @@ const update = (display) => {
 
 	ctx.clearRect(0, 0, W, H);
 	
-	// draw rectancle 
 	if (param.dark_mode.widget.value()){
 		ctx.fillStyle = "black";
 		ctx.fillRect(0, 0, W, H);				
-	} else {
-		// ctx.strokeStyle = "black";
-// 		ctx.strokeRect(0, 0, W, H);
-	}
+	} 
 	
 	orbits.forEach(function(d){
 		const co = param.color_orbits.widget.value() ? C(d.color) : param.dark_mode.widget.value() ? "white" : "black" 
@@ -49,9 +45,7 @@ const update = (display) => {
 	if(param.highlight_last.widget.value() && orbits.length>0){
 		draw_orbit(orbits[orbits.length-1].orbit,cfg.simulation.highlight_size,cfg.simulation.highlight_color)
 	}
-		
-	// ctx.strokeStyle = "black";
-	// ctx.strokeRect(0, 0, W, H);
+	
 }
 
 const initialize = (display,config) => {
@@ -66,19 +60,13 @@ const initialize = (display,config) => {
 	Xback.domain([0,cv.width])
 	Yback.domain([0,cv.height])
 
-	ctx = display.node().getContext('2d');
-	
-	
+	ctx = display.node().getContext('2d');	
 	ctx.clearRect(0, 0, W, H);
 	
-	// draw rectancle without fill
 	if (param.dark_mode.widget.value()){
 		ctx.fillStyle = "black";
 		ctx.fillRect(0, 0, W, H);				
-	} else {
-		// ctx.strokeStyle = "black";
-// 		ctx.strokeRect(0, 0, W, H);	
-	}
+	} 
 	
 	ctx.font = "60px Avenir";
 	ctx.fillStyle = "gray";
@@ -87,10 +75,7 @@ const initialize = (display,config) => {
 	
 };
 
-const go = (display) => {
-	
-	update(display)
-}
+const go = (display) => { update(display) }
 
 
 export {initialize,go,update,Xback,Yback}
