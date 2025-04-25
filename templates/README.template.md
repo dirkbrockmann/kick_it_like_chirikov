@@ -2,20 +2,20 @@
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
-# Kick it like Chirikov
+# {{TITLE}}
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
-This explorable illustrates the chaotic sea of the famous two-dimensional map known as the kicked rotator or standard map. It's a very important system in nonlinear dynamics.
+{{DESCRIPTION}}
 
 The explorable is part of the [**Complexity Exporables Collection**](https://www.complexity-explorables.org). For more information about the system and its behavior consult the explorable
-> [**“Kick it like Chirikov” - The kicked rotator (standard map)**](https://www.complexity-explorables.org/explorables/kick-it-like-chirikov)
+> [**“{{TITLE}}” - {{SUBTITLE}}**](https://www.complexity-explorables.org/explorables/{{NAME}})
 
 ## Usage & Installation
 
 ### Just running the explorable
 
-If you just want to run the explorable you can [**Click here.**](https://raw.githack.com/dirkbrockmann/kick_it_like_chirikov/main/dist/index.html)
+If you just want to run the explorable you can [**Click here.**](https://raw.githack.com/dirkbrockmann/{{NAMESPACE}}/main/dist/index.html)
  
 
 ### Running a local copy
@@ -24,8 +24,8 @@ If you want to run a local copy without having to rely on the nasty internet, th
 is to install it via `npm`:
 
 ```shell
-npm install @explorables/kick_it_like_chirikov
-open node_modules/@explorables/kick_it_like_chirikov/dist/index.html 
+npm install @explorables/{{NAMESPACE}}
+open node_modules/@explorables/{{NAMESPACE}}/dist/index.html 
 ```
 
 ### Embedding the explorable in your site
@@ -43,7 +43,7 @@ like so:
 <html>
 	<head>
 		...
-		<script src="https://cdn.jsdelivr.net/npm/@explorables/kick_it_like_chirikov/dist/index.umd.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@explorables/{{NAMESPACE}}/dist/index.umd.js"></script>
 		...
 	</head>
 		...
@@ -54,13 +54,13 @@ like so:
 	</body>
 		...
 	<script type="text/javascript">
-		const explorable_instance = kick_it_like_chirikov.load("explorable_container")
+		const explorable_instance = {{NAMESPACE}}.load("explorable_container")
 	</script>
 		...
 </html>
 ```
 
-The header `<script>` tag loads the bundle, the `<div>` in the document is the container in which the explorable gets anchored when the function `kick_it_like_chirikov("explorable_container")` gets executed at the bottom. This function needs the `<div>` container `id` as an argument. The function returns an instance of the explorable and writes it to `explorable_instance`. That variable contains functions like `halt()`, `reset()` and variables `meta` and `config`.
+The header `<script>` tag loads the bundle, the `<div>` in the document is the container in which the explorable gets anchored when the function `{{NAMESPACE}}("explorable_container")` gets executed at the bottom. This function needs the `<div>` container `id` as an argument. The function returns an instance of the explorable and writes it to `explorable_instance`. That variable contains functions like `halt()`, `reset()` and variables `meta` and `config`.
 	
 If you want to make use of ES modules instead of UMD, here's a way that will work on modern (ES support) and legacy browsers (UMD only).
 
@@ -70,10 +70,10 @@ If you want to make use of ES modules instead of UMD, here's a way that will wor
 	<head>
 		...
 	    <script type="module">
-	  	      import load from 'https://cdn.jsdelivr.net/npm/@explorables/kick_it_like_chirikov/dist/index.es.js';
-	  	      const kick_it_like_chirikov = load("explorable_container");
+	  	      import load from 'https://cdn.jsdelivr.net/npm/@explorables/{{NAMESPACE}}/dist/index.es.js';
+	  	      const {{NAMESPACE}} = load("explorable_container");
 	    </script>
-	    <script nomodule src="https://cdn.jsdelivr.net/npm/@explorables/kick_it_like_chirikov/dist/index.umd.js"></script>	  
+	    <script nomodule src="https://cdn.jsdelivr.net/npm/@explorables/{{NAMESPACE}}/dist/index.umd.js"></script>	  
 		...
 	</head>
 		...
@@ -84,7 +84,7 @@ If you want to make use of ES modules instead of UMD, here's a way that will wor
 	</body>
 		...
 	<script nomodule type="text/javascript">
-		const explorable_instance = kick_it_like_chirikov.load("explorable_container")
+		const explorable_instance = {{NAMESPACE}}.load("explorable_container")
 	</script>
 		...
 </html>
@@ -99,13 +99,13 @@ If you want to modify or edit the explorable to make your own version:
 Clone repository:
 
 ```shell
-git clone https://github.com/dirkbrockmann/kick_it_like_chirikov.git
+git clone https://github.com/dirkbrockmann/{{NAMESPACE}}.git
 ```
 
 
 Go to the directory, install, build and show using `npm`:
 
-1. `cd kick_it_like_chirikov`
+1. `cd {{NAMESPACE}}`
 2. `npm install`
 3. `npm run build`
 3. `npm run preview`

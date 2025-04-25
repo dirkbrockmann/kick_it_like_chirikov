@@ -15,7 +15,7 @@ export default {
 		button_anchor:{x:6,y:2}		
 	},
 	simulation: {
-		delay:0,
+		delay:10,
 		highlight_color:"red",
 		highlight_size:2,
 		colormap:"vik"

@@ -1,7 +1,6 @@
 import * as d3 from "d3"
 import param from "./parameters.js"
 import {each,range,map,mean} from "lodash-es"
-import {rad2deg,deg2rad} from "./utils"
 import {Xback,Yback} from "./viz.js"
 
 const N = param.N;
